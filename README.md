@@ -1,57 +1,53 @@
-# Aetheria: Echa Upadku
+# Aetheria — Roblox Game Fund Grant Package
 
-**Roblox Game Fund — Grant Proposal Repository**
+**Project:** Aetheria: Echa Upadku  
+**Applicant:** Andrzej Mikulski  
+**Application posture:** independent/private applicant; final legal entity and contracting status subject to Roblox confirmation  
+**Repository purpose:** evidence-backed grant materials, technical concept, budget model, milestones, compliance plan, and submission checklist.
 
-## Status
+## Executive position
 
-This repository contains the working grant package for **Aetheria: Echa Upadku**, a multiplayer survival-action RPG designed specifically for Roblox.
+Aetheria is a high-fidelity multiplayer Survival-Action-RPG concept designed around a deterministic Roblox game layer and an AI-assisted Director system. The project is positioned to demonstrate how Roblox can support cinematic, cooperative, socially driven experiences while preserving platform safety, operational control, and scalable production economics.
 
-> **Important:** Roblox Game Fund eligibility, application availability, funding terms, API capabilities, platform policies, and publishing requirements must be verified against current official Roblox sources immediately before submission. Historical Game Fund materials describe the program and its original criteria, but should not be represented as proof of an open 2026 call.
+The project deliberately distinguishes between:
 
-## Project at a glance
+- **currently documented Roblox capabilities**;
+- **Roblox technologies publicly described as early-stage / forthcoming**;
+- **project-level prototypes and assumptions** that must be validated during development.
 
-- **Working title:** Aetheria: Echa Upadku
-- **Genre:** Multiplayer Survival-Action RPG
-- **Core team model:** Producer / Technical Lead / AI Engineer / Tech Artist / 3D Artist-Animator / UX/UI / QA
-- **Primary audience:** Players 16+; final audience and content maturity depend on Roblox's current policies and the completed Maturity & Compliance questionnaire.
-- **Core differentiator:** A systemic Director AI that changes encounters and environmental pressure based on aggregated game-state signals rather than functioning as an unrestricted conversational NPC.
-- **Platform strengths:** Multiplayer, cross-platform design, mobile-first performance targets, social hub, Roblox avatar identity, procedural/systemic content, and high-fidelity visual ambition.
+This distinction is mandatory for truthful grant documentation.
 
-## Repository structure
+## Current repository status
 
-- `docs/` — grant narrative, executive summary, game design, technical design, AI safety, production plan, budget, KPI framework, and risk register.
-- `pitch/` — pitch-deck source material and slide-by-slide copy.
-- `research/` — source register and fact-check notes.
-- `legal/` — applicant declarations, IP/licensing checklist, privacy and compliance checklist.
-- `finance/` — detailed budget and assumptions.
-- `milestones/` — milestone definitions, acceptance criteria, and evidence requirements.
-- `prototype/` — prototype architecture and implementation notes.
+The repository now contains the core grant package:
 
-## Proposal principles
+- `docs/EXECUTIVE-SUMMARY.md` — reviewer-facing project summary
+- `docs/GAME-DESIGN.md` — game vision and core loop
+- `docs/TECHNICAL-DESIGN.md` — technical architecture and AI Director approach
+- `docs/AI-SAFETY-AND-COMPLIANCE.md` — generative-AI safety and platform compliance posture
+- `docs/GO-TO-MARKET.md` — launch and audience strategy
+- `docs/APPLICANT-PROFILE.md` — applicant presentation template
+- `docs/RISK-REGISTER.md` — quantified risks and mitigations
+- `docs/SUBMISSION-CHECKLIST.md` — final submission gate
+- `finance/BUDGET.md` — budget methodology and scenario model
+- `milestones/MILESTONE-PLAN.md` — milestone-based delivery plan
+- `research/SOURCE-REGISTER.md` — evidence register and fact-status policy
 
-1. Never present an unverified Roblox feature, program rule, rate, threshold, or API limit as fact.
-2. Separate confirmed platform capabilities from proposed project architecture.
-3. Tie every grant-funded cost to a measurable deliverable.
-4. Treat AI safety, privacy, age-appropriate design, moderation, and operational resilience as first-class engineering requirements.
-5. Optimize for a credible vertical slice before committing to full production scale.
+## Critical factual policy
 
-## Current evidence baseline
+The original working paper contained claims about a 2026 Game Fund intake, grant ceilings, publishing thresholds, API limits, and platform workflows that were not all supported by current primary-source documentation. Those claims must not be presented as confirmed program requirements unless Roblox confirms them in the active application process.
 
-Roblox's historical Game Fund announcement states that the program sought innovative gameplay, ambitious visual design, multiplayer/cross-platform experiences with mobile optimization, fundamental social mechanics, platform-avatar identity, and use of Avatar Shop items; it also required team details, a short project description, a pitch deck, and a milestone schedule and budget. citeturn723596search0turn723596search1
+Roblox officially described the Game Fund as a **$25 million program launched in 2021** to support next-generation experiences, and publicly announced initial recipients in 2022. That is historical evidence, not proof of a current 2026 application window.
 
-Roblox's current documentation confirms several relevant platform capabilities including subscriptions, passes, developer products, advertising, and Creator Rewards. citeturn516321search8turn516321search10
+Roblox has separately published 2026 material describing **Roblox Reality**, a hybrid architecture that combines the Roblox Engine's structured simulation with edge-based Video World Models for supersampling, with an early version described as forthcoming later in 2026 or early 2027. Roblox also described the Morpheus AI, Dynamics Lab, and Lucid AI work behind this direction. These are valid strategic technology references, but the repository does not claim that every component is already generally available to creators.
 
-The current DevEx documentation specifies a minimum of 30,000 Earned Robux, age 13+, verified email, and other compliance/tax requirements; the standard current rate is $0.0038 per Earned Robux ($114 per 30,000). citeturn516321search0
+Roblox also currently documents `TextGenerator:GenerateTextAsync()` and `GenerationService:GenerateModelAsync()` as creator-facing capabilities. Their exact availability, limits, moderation behavior, and eligibility must be treated according to the live Creator Hub documentation at submission time.
 
-Roblox's current age and publishing documentation should be used for the final audience strategy. Experiences with Restricted maturity are limited to age-verified users 18+, while other maturity levels have specific audience rules. citeturn254589search1turn254589search2
+## Submission status
 
-## Submission readiness rule
+**Not yet submission-ready in the literal sense.** The documentation package is substantially prepared, but two external gates remain:
 
-The project is **not considered submission-ready** until:
+1. confirmation of the current Roblox funding/application route, eligibility, and active terms;
+2. a credible prototype/demo package demonstrating the core gameplay and technical thesis.
 
-- a current official application path or direct Roblox contact for Game Fund is confirmed;
-- every platform-specific factual claim has a primary-source citation;
-- budget arithmetic and assumptions reconcile in USD and PLN;
-- applicant/team information is complete and legally accurate;
-- the pitch deck, project summary, milestone plan, budget, technical plan, compliance plan, and evidence package are mutually consistent;
-- a playable or demonstrable vertical slice exists to substantiate the most important claims.
+No document in this repository should imply that those two gates have already been satisfied.
