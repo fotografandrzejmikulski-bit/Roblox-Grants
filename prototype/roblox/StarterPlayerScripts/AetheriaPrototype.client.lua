@@ -1,103 +1,56 @@
--- Aetheria: Echa Upadku
--- Lightweight client HUD for the grant-facing vertical slice.
-
-local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+
+local root = ReplicatedStorage:WaitForChild("Aetheria")
+local stateEvent = root:WaitForChild("StateEvent")
 
 local player = Players.LocalPlayer
-local root = ReplicatedStorage:WaitForChild("Aetheria")
-local event = root:WaitForChild("PrototypeEvent")
-
 local gui = Instance.new("ScreenGui")
-gui.Name = "AetheriaPrototypeHUD"
+gui.Name = "AetheriaHUD"
 gui.ResetOnSpawn = false
 gui.Parent = player:WaitForChild("PlayerGui")
 
+local frame = Instance.new("Frame")
+frame.Size = UDim2.fromOffset(360, 210)
+frame.Position = UDim2.fromOffset(20, 20)
+frame.BackgroundTransparency = 0.12
+frame.Parent = gui
+
 local title = Instance.new("TextLabel")
-title.Size = UDim2.fromOffset(420, 44)
-title.Position = UDim2.fromOffset(24, 24)
-title.BackgroundTransparency = 0.25
-title.Text = "AETHERIA // ECHA UPADKU"
-title.TextScaled = true
-title.Parent = gui
+title.Size = UDim2.new(1, -20, 0, 32)
+title.Position = UDim2.fromOffset(10, 8)
+title.BackgroundTransparency = 1
+title.TextXAlignment = Enum.TextXAlignment.Left
+title.Font = Enum.Font.GothamBold
+title.TextSize = 20
+title.Text = "AETHERIA — DIRECTOR"
+title.Parent = frame
 
-local status = Instance.new("TextLabel")
-status.Size = UDim2.fromOffset(620, 180)
-status.Position = UDim2.fromOffset(24, 78)
-status.BackgroundTransparency = 0.30
-status.TextXAlignment = Enum.TextXAlignment.Left
-status.TextYAlignment = Enum.TextYAlignment.Top
-status.TextWrapped = true
-status.TextSize = 20
-status.Text = "Vertical Slice\nSTATUS: HUB\nDirector: ready"
-status.Parent = gui
+local body = Instance.new("TextLabel")
+body.Size = UDim2.new(1, -20, 1, -52)
+body.Position = UDim2.fromOffset(10, 44)
+body.BackgroundTransparency = 1
+body.TextXAlignment = Enum.TextXAlignment.Left
+body.TextYAlignment = Enum.TextYAlignment.Top
+body.Font = Enum.Font.Code
+body.TextSize = 15
+body.TextWrapped = false
+body.Text = "Connecting…"
+body.Parent = frame
 
-local function write(line)
-    status.Text ..= "\n" .. line
+local function pct(v)
+  return string.format("%d%%", math.floor((v or 0) * 100 + 0.5))
 end
 
-event.OnClientEvent:Connect(function(kind, payload)
-    payload = payload or {}
-    if kind == "MISSION_STARTED" then
-        status.Text = "Vertical Slice\nSTATUS: EXPEDITION\nSquad: " .. tostring(payload.squadSize or "?")
-    elseif kind == "DIRECTOR_DECISION" then
-        write("Director → " .. tostring(payload.action) .. " [" .. tostring(payload.reasonCode) .. "]")
-    elseif kind == "DIRECTOR_FALLBACK" then
-        write("Director FALLBACK engaged (#" .. tostring(payload.count) .. ")")
-    elseif kind == "ENCOUNTER" then
-        write("Encounter: " .. tostring(payload.type) .. " / intensity " .. string.format("%.2f", payload.intensity or 0))
-    elseif kind == "WEATHER" then
-        write("Environment: " .. tostring(payload.profile))
-    elseif kind == "ROUTE_CLOSED" then
-        write("Route closed: " .. tostring(payload.route))
-    elseif kind == "RESOURCE_CACHE" then
-        write("Resource cache opened: " .. tostring(payload.location))
-    elseif kind == "EXTRACTION_PRESSURE" then
-        write("Extraction pressure: " .. string.format("%.2f", payload.intensity or 0))
-    elseif kind == "AI_STATUS" then
-        write("AI adapter online = " .. tostring(payload.online))
-    elseif kind == "MISSION_COMPLETE" then
-        status.Text = "Vertical Slice\nSTATUS: EXTRACTION COMPLETE\nFallback events: " .. tostring(payload.fallbackCount or 0)
-    elseif kind == "HUB_RETURN" then
-        status.Text = "Vertical Slice\nSTATUS: HUB\nReady for next expedition"
-    elseif kind == "PLAYER_JOINED" then
-        write("Player count: " .. tostring(payload.playerCount))
-    end
-end)
-
--- Prototype controls: visible only in the vertical slice HUD.
-local start = Instance.new("TextButton")
-start.Size = UDim2.fromOffset(220, 48)
-start.Position = UDim2.fromOffset(24, 270)
-start.Text = "START EXPEDITION"
-start.Parent = gui
-start.MouseButton1Click:Connect(function()
-    event:FireServer("START_MISSION")
-end)
-
-local outage = Instance.new("TextButton")
-outage.Size = UDim2.fromOffset(220, 48)
-outage.Position = UDim2.fromOffset(260, 270)
-outage.Text = "SIMULATE AI OUTAGE"
-outage.Parent = gui
-outage.MouseButton1Click:Connect(function()
-    event:FireServer("SIMULATE_AI_OUTAGE")
-end)
-
-local restore = Instance.new("TextButton")
-restore.Size = UDim2.fromOffset(220, 48)
-restore.Position = UDim2.fromOffset(496, 270)
-restore.Text = "RESTORE AI"
-restore.Parent = gui
-restore.MouseButton1Click:Connect(function()
-    event:FireServer("RESTORE_AI")
-end)
-
-local extract = Instance.new("TextButton")
-extract.Size = UDim2.fromOffset(220, 48)
-extract.Position = UDim2.fromOffset(732, 270)
-extract.Text = "EXTRACT"
-extract.Parent = gui
-extract.MouseButton1Click:Connect(function()
-    event:FireServer("EXTRACT")
+stateEvent.OnClientEvent:Connect(function(s)
+  body.Text = table.concat({
+    "PHASE       " .. tostring(s.phase),
+    "PLAYERS     " .. tostring(s.players),
+    "MISSION     " .. tostring(s.missionTime) .. "s",
+    "PRESSURE    " .. pct(s.resourcePressure),
+    "EXTRACTION  " .. pct(s.extractionProgress),
+    "DIRECTOR    " .. (s.directorAvailable and "ONLINE" or "OUTAGE → FALLBACK"),
+    "LAST ACTION " .. tostring(s.lastAction),
+    "ACTIONS     " .. tostring(s.actionCount),
+  }, "\n")
 end)
