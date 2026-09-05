@@ -1,53 +1,92 @@
-# Aetheria — Roblox Game Fund Grant Package
+# Aetheria — Roblox Grant Submission Package
 
 **Project:** Aetheria: Echa Upadku  
 **Applicant:** Andrzej Mikulski  
 **Application posture:** independent/private applicant; final legal entity and contracting status subject to Roblox confirmation  
-**Repository purpose:** evidence-backed grant materials, technical concept, budget model, milestones, compliance plan, and submission checklist.
+**Repository purpose:** evidence-backed grant materials, prototype, technical concept, budget model, milestones, compliance plan, and submission package.
 
 ## Executive position
 
-Aetheria is a high-fidelity multiplayer Survival-Action-RPG concept designed around a deterministic Roblox game layer and an AI-assisted Director system. The project is positioned to demonstrate how Roblox can support cinematic, cooperative, socially driven experiences while preserving platform safety, operational control, and scalable production economics.
+Aetheria is a cooperative multiplayer Survival-Action-RPG concept designed around a deterministic Roblox game layer and an AI-assisted Director system. The project is positioned to demonstrate how Roblox can support sophisticated cooperative, socially driven experiences while preserving platform safety, operational control, and scalable production economics.
 
 The project deliberately distinguishes between:
 
-- **currently documented Roblox capabilities**;
-- **Roblox technologies publicly described as early-stage / forthcoming**;
-- **project-level prototypes and assumptions** that must be validated during development.
+- currently documented Roblox capabilities;
+- Roblox technologies publicly described as early-stage / forthcoming;
+- project-level prototype evidence;
+- assumptions that require confirmation with Roblox.
 
-This distinction is mandatory for truthful grant documentation.
+## Repository package
 
-## Current repository status
+### Core application
 
-The repository now contains the core grant package:
-
-- `docs/EXECUTIVE-SUMMARY.md` — reviewer-facing project summary
+- `docs/GRANT-APPLICATION-FINAL.md` — professional grant application
+- `docs/EXECUTIVE-SUMMARY.md` — reviewer-facing summary
+- `docs/APPLICANT-PROFILE.md` — applicant presentation
 - `docs/GAME-DESIGN.md` — game vision and core loop
-- `docs/TECHNICAL-DESIGN.md` — technical architecture and AI Director approach
-- `docs/AI-SAFETY-AND-COMPLIANCE.md` — generative-AI safety and platform compliance posture
-- `docs/GO-TO-MARKET.md` — launch and audience strategy
-- `docs/APPLICANT-PROFILE.md` — applicant presentation template
-- `docs/RISK-REGISTER.md` — quantified risks and mitigations
+- `docs/GO-TO-MARKET.md` — audience and launch strategy
+
+### Technical and evidence package
+
+- `docs/TECHNICAL-DESIGN.md` — authoritative server architecture and Director system
+- `docs/AI-SAFETY-AND-COMPLIANCE.md` — AI safety and compliance posture
+- `docs/PROTOTYPE-EVIDENCE.md` — reproducible vertical-slice evidence plan
+- `prototype/README.md` — Studio setup and test protocol
+- `prototype/roblox/ServerScriptService/AetheriaPrototype.server.lua` — functional server prototype
+- `prototype/roblox/StarterPlayerScripts/AetheriaPrototype.client.lua` — functional prototype HUD
+
+### Commercial and delivery package
+
+- `finance/BUDGET.md` — bottom-up budget methodology
+- `milestones/MILESTONE-PLAN.md` — milestone-driven production plan
+- `docs/RISK-REGISTER.md` — risk management
 - `docs/SUBMISSION-CHECKLIST.md` — final submission gate
-- `finance/BUDGET.md` — budget methodology and scenario model
-- `milestones/MILESTONE-PLAN.md` — milestone-based delivery plan
-- `research/SOURCE-REGISTER.md` — evidence register and fact-status policy
+- `research/SOURCE-REGISTER.md` — fact verification and evidence policy
 
-## Critical factual policy
+## Current Roblox program position
 
-The original working paper contained claims about a 2026 Game Fund intake, grant ceilings, publishing thresholds, API limits, and platform workflows that were not all supported by current primary-source documentation. Those claims must not be presented as confirmed program requirements unless Roblox confirms them in the active application process.
+Roblox's historical Game Fund was launched in 2021 with a stated $25 million pool, and Roblox publicly described project criteria including innovative gameplay, ambitious visuals, multiplayer/cross-platform play, mobile optimization, fundamental social mechanics, platform-avatar identity, and Avatar Shop integration. Roblox also listed a project description, pitch deck, team details, milestone schedule and budget as application materials. This is historical program evidence and must not be represented as proof that the same funding window or terms remain active in 2026. citeturn994487search0turn994487search2
 
-Roblox officially described the Game Fund as a **$25 million program launched in 2021** to support next-generation experiences, and publicly announced initial recipients in 2022. That is historical evidence, not proof of a current 2026 application window.
+For 2026, Roblox has an active strategic focus on novel games and has operated the Roblox Incubator. The first 2026 Incubator cohort application is closed; Roblox describes the program as six months, milestone-based, and aimed at small experienced teams with strong prototypes or plans to build them. citeturn994487search4turn994487search12
 
-Roblox has separately published 2026 material describing **Roblox Reality**, a hybrid architecture that combines the Roblox Engine's structured simulation with edge-based Video World Models for supersampling, with an early version described as forthcoming later in 2026 or early 2027. Roblox also described the Morpheus AI, Dynamics Lab, and Lucid AI work behind this direction. These are valid strategic technology references, but the repository does not claim that every component is already generally available to creators.
+Accordingly, this repository is structured to be usable for a reopened Roblox program, incubator-style opportunity, or direct creator-partnership/funding discussion rather than claiming a nonexistent active Game Fund application link.
 
-Roblox also currently documents `TextGenerator:GenerateTextAsync()` and `GenerationService:GenerateModelAsync()` as creator-facing capabilities. Their exact availability, limits, moderation behavior, and eligibility must be treated according to the live Creator Hub documentation at submission time.
+## Technology position
+
+Roblox currently documents `TextGenerator:GenerateTextAsync()` for creator-facing text generation and `GenerationService:GenerateModelAsync()` for text/image-conditioned 3D model generation. citeturn752627search2turn994487search5
+
+Roblox also publicly describes Roblox Reality as an early-stage hybrid architecture combining structured simulation with edge-based video world models, with an early version described as targeted for late 2026 or early 2027. Aetheria treats this as an optional acceleration layer and does not depend on it for minimum viability. citeturn994487search10turn994487search1
+
+## Prototype status
+
+A functional grant-facing vertical slice is now included in the repository. It demonstrates:
+
+1. social-hub state;
+2. expedition start;
+3. server-authoritative mission state;
+4. bounded Director actions;
+5. allow-list validation;
+6. simulated AI outage;
+7. deterministic fallback behavior;
+8. extraction;
+9. return to hub;
+10. readable instrumentation for the key transitions.
+
+This is an architectural/gameplay proof, not a claim that final AAA visual production has already been completed.
+
+## Commercial position
+
+The project is designed around Roblox-native monetization pathways. Roblox currently documents passes, developer products, subscriptions, private servers, paid access, avatar items and Creator Rewards. citeturn752627search1turn752627search4
 
 ## Submission status
 
-**Not yet submission-ready in the literal sense.** The documentation package is substantially prepared, but two external gates remain:
+**PACKAGE READY FOR SUBMISSION PREPARATION.**
 
-1. confirmation of the current Roblox funding/application route, eligibility, and active terms;
-2. a credible prototype/demo package demonstrating the core gameplay and technical thesis.
+The narrative, technical architecture, safety posture, prototype, financial methodology and formal application are prepared.
 
-No document in this repository should imply that those two gates have already been satisfied.
+The following two items cannot be honestly fabricated inside GitHub and must be completed by the applicant immediately before transmission:
+
+1. attach the actual Studio-recorded prototype evidence (video/screenshots/build link);
+2. use the then-current official Roblox application/partnership route and verify its live eligibility/terms on the day of submission.
+
+No repository document claims Roblox approval, guaranteed funding, or acceptance into a program that is not currently open.
