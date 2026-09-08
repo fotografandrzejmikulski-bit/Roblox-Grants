@@ -1,53 +1,100 @@
-# Aetheria — Roblox Game Fund Grant Package
+# Aetheria — Roblox Grant & Partnership Package
 
 **Project:** Aetheria: Echa Upadku  
 **Applicant:** Andrzej Mikulski  
-**Application posture:** independent/private applicant; final legal entity and contracting status subject to Roblox confirmation  
-**Repository purpose:** evidence-backed grant materials, technical concept, budget model, milestones, compliance plan, and submission checklist.
+**Email:** mojealterego21@gmail.com  
+**Phone:** +48 455 575 337  
+**Country:** Poland  
+**Platform:** Roblox
 
 ## Executive position
 
-Aetheria is a high-fidelity multiplayer Survival-Action-RPG concept designed around a deterministic Roblox game layer and an AI-assisted Director system. The project is positioned to demonstrate how Roblox can support cinematic, cooperative, socially driven experiences while preserving platform safety, operational control, and scalable production economics.
+Aetheria is a cooperative multiplayer survival-action RPG designed specifically for Roblox. Its core differentiator is a bounded **Director** system that adapts expedition pacing and pressure to the live state of a squad while deterministic, server-authoritative gameplay systems remain in control of the simulation.
 
-The project deliberately distinguishes between:
+The project is deliberately positioned as an evidence-first proposal. Every material statement is classified as one of four types:
 
-- **currently documented Roblox capabilities**;
-- **Roblox technologies publicly described as early-stage / forthcoming**;
-- **project-level prototypes and assumptions** that must be validated during development.
+1. current official Roblox capability;
+2. historical Roblox program context;
+3. implemented project source;
+4. future production commitment requiring runtime or external validation.
 
-This distinction is mandatory for truthful grant documentation.
+This prevents unsupported claims from entering the grant package.
 
-## Current repository status
+## Applicant
 
-The repository now contains the core grant package:
+**Andrzej Mikulski**  
+mojealterego21@gmail.com  
++48 455 575 337
 
-- `docs/EXECUTIVE-SUMMARY.md` — reviewer-facing project summary
+Applicant details are maintained in `docs/APPLICANT-PROFILE-FINAL.md`.
+
+## Application package
+
+### Final application
+
+- `docs/GRANT-APPLICATION-EXECUTIVE-FINAL.md` — final executive grant/partnership application
+- `docs/APPLICATION-LETTER.md` — formal Roblox funding/partnership inquiry
+- `docs/EXECUTIVE-SUMMARY.md` — reviewer summary
+- `docs/APPLICANT-PROFILE-FINAL.md` — final applicant record
+
+### Product and technology
+
 - `docs/GAME-DESIGN.md` — game vision and core loop
-- `docs/TECHNICAL-DESIGN.md` — technical architecture and AI Director approach
-- `docs/AI-SAFETY-AND-COMPLIANCE.md` — generative-AI safety and platform compliance posture
-- `docs/GO-TO-MARKET.md` — launch and audience strategy
-- `docs/APPLICANT-PROFILE.md` — applicant presentation template
-- `docs/RISK-REGISTER.md` — quantified risks and mitigations
+- `docs/TECHNICAL-DESIGN.md` — system architecture and Director design
+- `docs/AI-SAFETY-AND-COMPLIANCE.md` — safety/compliance framework
+- `docs/PROTOTYPE-EVIDENCE.md` — evidence requirements
+- `prototype/README.md` — Studio test protocol
+- `prototype/BUILD-MANIFEST.md` — prototype version and evidence matrix
+- `prototype/roblox/ServerScriptService/AetheriaPrototype.server.lua` — server implementation
+- `prototype/roblox/StarterPlayerScripts/AetheriaPrototype.client.lua` — client HUD and controls
+
+### Commercial and delivery
+
+- `finance/BUDGET.md` — budget model
+- `milestones/MILESTONE-PLAN.md` — delivery/KPI framework
+- `docs/GO-TO-MARKET.md` — launch strategy
+- `docs/RISK-REGISTER.md` — risk register
 - `docs/SUBMISSION-CHECKLIST.md` — final submission gate
-- `finance/BUDGET.md` — budget methodology and scenario model
-- `milestones/MILESTONE-PLAN.md` — milestone-based delivery plan
-- `research/SOURCE-REGISTER.md` — evidence register and fact-status policy
 
-## Critical factual policy
+### Evidence and research
 
-The original working paper contained claims about a 2026 Game Fund intake, grant ceilings, publishing thresholds, API limits, and platform workflows that were not all supported by current primary-source documentation. Those claims must not be presented as confirmed program requirements unless Roblox confirms them in the active application process.
+- `research/SOURCE-REGISTER.md` — source register
+- `research/FINAL-FACT-CHECK.md` — final claim/evidence matrix
 
-Roblox officially described the Game Fund as a **$25 million program launched in 2021** to support next-generation experiences, and publicly announced initial recipients in 2022. That is historical evidence, not proof of a current 2026 application window.
+## Prototype claim
 
-Roblox has separately published 2026 material describing **Roblox Reality**, a hybrid architecture that combines the Roblox Engine's structured simulation with edge-based Video World Models for supersampling, with an early version described as forthcoming later in 2026 or early 2027. Roblox also described the Morpheus AI, Dynamics Lab, and Lucid AI work behind this direction. These are valid strategic technology references, but the repository does not claim that every component is already generally available to creators.
+The repository contains an implementation-oriented Roblox Studio vertical slice demonstrating the architectural thesis: a shared mission state, bounded Director decisions, action validation, simulated Director outage, deterministic fallback, extraction, reset, and instrumentation.
 
-Roblox also currently documents `TextGenerator:GenerateTextAsync()` and `GenerationService:GenerateModelAsync()` as creator-facing capabilities. Their exact availability, limits, moderation behavior, and eligibility must be treated according to the live Creator Hub documentation at submission time.
+The prototype is **not represented as externally validated or production-complete** until it has been executed in Roblox Studio and the required recording/benchmark evidence has been archived.
+
+## Roblox program positioning
+
+The historical Roblox Game Fund is treated as historical context. Roblox's current programs, eligibility, application routes, funding instruments, and technology availability must be confirmed against the official Roblox material that is live at the moment of submission.
+
+Aetheria is therefore written to support the appropriate current path: funding, incubation, strategic partnership, creator support, or another Roblox-approved route.
 
 ## Submission status
 
-**Not yet submission-ready in the literal sense.** The documentation package is substantially prepared, but two external gates remain:
+**PRE-SUBMISSION — DOCUMENT PACKAGE READY.**
 
-1. confirmation of the current Roblox funding/application route, eligibility, and active terms;
-2. a credible prototype/demo package demonstrating the core gameplay and technical thesis.
+Completed:
 
-No document in this repository should imply that those two gates have already been satisfied.
+- application narrative;
+- executive summary;
+- technical architecture;
+- AI safety model;
+- financial methodology;
+- milestones and KPIs;
+- risk register;
+- go-to-market strategy;
+- applicant data;
+- prototype source;
+- evidence matrix;
+- final fact-check layer.
+
+Still required before the applicant can truthfully mark the package fully submission-ready:
+
+1. execute the prototype in Roblox Studio and archive the actual runtime evidence;
+2. verify the live Roblox application/partnership route and applicable terms on the transmission date.
+
+No repository content represents funding, approval, partnership, public deployment, or runtime benchmark results as guaranteed or already completed without evidence.
